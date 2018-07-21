@@ -1,24 +1,35 @@
 struct QuestionAnswerer {
     /// Creates a String in response to another String.
     func responseTo(question: String) -> String {
-        let lowerQuestion = question.lowercased()
         
-        if lowerQuestion.hasPrefix("hello") {
+        let lowerCasedQuestion = question.lowercased()
+        
+        if lowerCasedQuestion == "hello there" {
             return "Why, hello there!"
-        } else if lowerQuestion == "where are the cookies?" {
-            return "In the cookie jar!"
-        } else if lowerQuestion.hasPrefix("where") {
-            return "To the North!"
-        } else {
-            let defaultNumber = question.characters.count % 3
-            
-            if defaultNumber == 0 {
-                return "That really depends"
-            } else if defaultNumber == 1 {
-                return "I think so, yes"
-            } else {
-                return "Ask me again tomorrow"
-            }
         }
+            
+        else if lowerCasedQuestion == "where should i go on holiday?" {
+            return "To the North!"
+        }
+            
+        else if lowerCasedQuestion == "where can i find the north pole?" {
+            return "To the North!"
+        }
+            
+        else if lowerCasedQuestion == "where are the cookies?" {
+            return "In the cookie jar!"
+        }
+            
+        else if lowerCasedQuestion == "can i have a cookie?" {
+            return "Yes, you may have TWO cookies!!"
+        }
+            
+        else if question == "CAN I HAVE A COOKIE?!?" {
+            return "Not if you can't ask without shouting!"
+        }
+            
+        else  { return "Ask another question that I can answer" }
+        
     }
+    
 }
